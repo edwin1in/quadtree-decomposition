@@ -3,12 +3,20 @@
 #include <opencv2/core.hpp>
 
 struct TreeNode {
-    cv::Mat img;
-
     TreeNode* nw;
     TreeNode* ne;
     TreeNode* sw;
     TreeNode* se;
 
-    explicit TreeNode(const cv::Mat& img) : img(img), nw(nullptr), ne(nullptr), sw(nullptr), se(nullptr) {}
+    cv::Vec3b color;
+    bool is_leaf;
+
+    explicit TreeNode(const cv::Vec3b& color = cv::Vec3b(0, 0, 0)) 
+        :   color(color), 
+            is_leaf(true), 
+            nw(nullptr), 
+            ne(nullptr), 
+            sw(nullptr), 
+            se(nullptr) 
+    {}
 };
