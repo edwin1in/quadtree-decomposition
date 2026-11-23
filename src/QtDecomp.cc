@@ -12,7 +12,7 @@ double calculate_mse(const cv::Mat& img){
         for(int col = 0; col < img.cols; col++){
             cv::Vec3b pixel = img.at<cv::Vec3b>(row,col);
             for(int i = 0; i < 3; i++ ){
-                double diff = pixel[i] - mean_color[i]
+                double diff = pixel[i] - mean_color[i];
                 mse+= diff * diff;
             }
         }
